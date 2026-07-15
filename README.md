@@ -67,21 +67,7 @@ Resource Utilization:
 LUTs: 65 (0.20% utilization)
 Flip-Flops: 106 (0.16% utilization)
 
-🚀 How to Run the Project
-
-Clone this repository:
-
-git clone [https://github.com/YourUsername/AHB_to_APB_Bridge_design.git](https://github.com/YourUsername/AHB_to_APB_Bridge_design.git)
-Open Xilinx Vivado and create a new RTL project.
-Add all .v files to your Design Sources.
-Add tb_tops.v to your Simulation Sources and set it as the Top module.
-Run Behavioral Simulation to view the AHB/APB transactions.
-(Optional) Add bridge_constraints.xdc, set Bridge_top as the top module, run Synthesis/Implementation in OOC mode to view hardware utilization and timing reports.
-
-🛠️ Tools Used
-
+🛠️ Tools Used:
 Simulation & Synthesis: Xilinx Vivado 2024.2
-
 Language: Verilog-2001
-
 Designed and Verified by [Your Name]
