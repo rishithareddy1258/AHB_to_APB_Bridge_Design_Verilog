@@ -38,31 +38,11 @@ Test Case
 
 Scenario
 
-Pass Condition
-
-1
-
-Single Write
-
-paddr=84000000, pwdata=12345678, penable pulses once.
-
-2
-
-Single Read
-
-paddr=80870000, hrdata returns data successfully from the peripheral memory model.
-
-3
-
-Burst Write (WRAP4)
-
-Address wraps correctly at 16-byte boundaries, 4 data beats executed cleanly.
-
-4
-
-Burst Read (INCR4)
-
-4 consecutive reads increment correctly, data routed back cleanly.
+Pass Condition 1
+Single Write paddr=84000000, pwdata=12345678, penable pulses once.
+2.Single Read paddr=80870000, hrdata returns data successfully from the peripheral memory model.
+3.Burst Write (WRAP4) Address wraps correctly at 16-byte boundaries, 4 data beats executed cleanly.
+4.Burst Read (INCR4) 4 consecutive reads increment correctly, data routed back cleanly.
 
 📊 Verification Waveforms
 
@@ -79,17 +59,12 @@ Demonstrates the 1-cycle pipeline delay between HADDR and HWDATA, and the proper
 Demonstrates the bridge pulling HREADYOUT low to stall the AHB bus while fetching data from the APB peripheral.
 
 💻 Hardware Implementation (FPGA)
-
 The RTL was synthesized and implemented Out-Of-Context (OOC) to validate hardware viability, targeting the Xilinx Spartan-7 (XC7S50CSGA324-1) architecture.
-
 Max Clock Frequency (Fmax): 224.06 MHz
-
 Timing Performance: Successfully met a strict 100MHz constraint with a massive Worst Negative Slack (WNS) of +5.537 ns, demonstrating highly efficient logic depth.
 
 Resource Utilization:
-
 LUTs: 65 (0.20% utilization)
-
 Flip-Flops: 106 (0.16% utilization)
 
 🚀 How to Run the Project
@@ -97,16 +72,10 @@ Flip-Flops: 106 (0.16% utilization)
 Clone this repository:
 
 git clone [https://github.com/YourUsername/AHB_to_APB_Bridge_design.git](https://github.com/YourUsername/AHB_to_APB_Bridge_design.git)
-
-
 Open Xilinx Vivado and create a new RTL project.
-
 Add all .v files to your Design Sources.
-
 Add tb_tops.v to your Simulation Sources and set it as the Top module.
-
 Run Behavioral Simulation to view the AHB/APB transactions.
-
 (Optional) Add bridge_constraints.xdc, set Bridge_top as the top module, run Synthesis/Implementation in OOC mode to view hardware utilization and timing reports.
 
 🛠️ Tools Used
